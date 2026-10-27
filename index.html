@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Student Planner</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <p class="eyebrow">STUDENT PLANNER</p>
+      <h1>Plan your study. Reach your goals.</h1>
+      <p class="subtitle">Keep tasks, deadlines, and study goals in one place.</p>
+    </div>
+    <div class="date-pill" id="today"></div>
+  </header>
+  <main class="layout">
+    <section class="stats">
+      <article class="stat-card"><span>Total tasks</span><strong id="totalCount">0</strong></article>
+      <article class="stat-card"><span>Completed</span><strong id="completedCount">0</strong></article>
+      <article class="stat-card"><span>Remaining</span><strong id="remainingCount">0</strong></article>
+    </section>
+    <section class="panel">
+      <h2>Add a study task</h2>
+      <form id="taskForm">
+        <label for="taskTitle">Task name</label>
+        <input id="taskTitle" required maxlength="100" placeholder="e.g. Revise Python Unit 1">
+        <div class="form-row">
+          <div>
+            <label for="taskSubject">Subject</label>
+            <input id="taskSubject" placeholder="e.g. Python">
+          </div>
+          <div>
+            <label for="taskDate">Due date</label>
+            <input id="taskDate" type="date">
+          </div>
+        </div>
+        <div class="form-row">
+          <div>
+            <label for="taskPriority">Priority</label>
+            <select id="taskPriority">
+              <option>Medium</option><option>High</option><option>Low</option>
+            </select>
+          </div>
+          <div>
+            <label for="taskType">Task type</label>
+            <select id="taskType">
+              <option>Study</option><option>Assignment</option><option>Exam</option><option>Personal</option>
+            </select>
+          </div>
+        </div>
+        <button type="submit">+ Add task</button>
+      </form>
+    </section>
+    <section class="panel task-panel">
+      <div class="task-heading">
+        <div><h2>Your tasks</h2><p class="muted">Your tasks are saved in this browser.</p></div>
+        <select id="filterTasks" aria-label="Filter tasks">
+          <option value="all">All tasks</option><option value="active">Remaining</option><option value="done">Completed</option>
+        </select>
+      </div>
+      <div id="taskList" class="task-list"></div>
+      <p id="emptyMessage" class="empty">No tasks yet. Add your first study task above!</p>
+    </section>
+  </main>
+  <footer>Smart Student Planner · Beginner-friendly student project</footer>
+  <script src="script.js"></script>
+</body>
+</html>
